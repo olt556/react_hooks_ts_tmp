@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { render } from 'react-dom';
-import TodoList  from './components/TodoList'
+import TodoList  from './components/TodoList';
 function Main() {
 	return (
 		<div>

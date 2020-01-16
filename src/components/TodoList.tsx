@@ -1,11 +1,23 @@
 import * as React from 'react';
 import { useState } from 'react';
+import * as styles from '../scss/app.scss'
+
+const getDate: String = Date();
 function getTodoList(todoList: Array<Object>){
 	return todoList.map((todo, index) =>
-		<p key={index}>{todo}</p>
+		<span
+			className={ styles.todo }
+			key={ index }
+		>
+			<p className={ styles.todo__text }>
+				{ todo }
+			</p>
+			<p className={ styles.todo__date }>
+				{ getDate }
+			</p>
+		</span>
 	);
 }
-const getDate: String = Date();
 function TodoList(){
 	const [count, setCount] = useState(0);
 	const [todoList, setTodos] = useState(Array());
