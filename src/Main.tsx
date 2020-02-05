@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 import TodoList  from './components/TodoList';
-function Main() {
+const Main = (): JSX.Element => {
 	return (
 		<div>
 			<TodoList />
@@ -13,5 +13,3 @@ render(
 	<Main />,
 	document.getElementById('root')
 );
-
-export default Main;

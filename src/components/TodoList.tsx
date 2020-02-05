@@ -2,39 +2,52 @@ import * as React from 'react';
 import { useState } from 'react';
 import * as styles from '../scss/app.scss'
 
-const getTodoList: Function = (todoList: Array<Object>) => {
-	const getDate: String = Date();
+const getTodoList = (todoList: Array<String>, date: Array<String>): Array<JSX.Element> => {
 	return todoList.map((todo: String, index: number) =>
 		<span
 			className={ styles.todo }
 			key={ index }
 		>
-			<p className={ styles.todo__text }>
-				{ todo }
-			</p>
-			<p className={ styles.todo__date }>
-				{ getDate }
-			</p>
+			{ todo !== '' &&
+				<p className={ styles.todo__text }>
+					{ todo }
+				</p>
+			}
+			{ todo !== '' &&
+				<p className={ styles.todo__date }>
+					{ date[index] }
+				</p>
+			}
 		</span>
 	);
 }
-const TodoList: Function = () => {
-	const [count, setCount] = useState(0);
-	const [todoList, setTodos] = useState(Array());
+const TodoList = (): JSX.Element => {
+	const [update, updateState] = useState(0);
+	const [todoList, setTodos] = useState(Array(''));
+	const [date, setDate] = useState(Array(Date()));
+
+	const stateValueUpdate = (): void => {
+		if (update === 0) {
+			updateState(1);
+		} else{
+			updateState(0);
+		}
+	}
 
 	return (
 		<div>
 			<p>Today's</p>
-			{ getTodoList(todoList) }
+			{ getTodoList(todoList, date) }
 			<textarea className="todoTextArea" inputMode="text"></textarea>
 			<button onClick={() => {
 					const textArea: HTMLInputElement = document.querySelector('.todoTextArea');
 					if (textArea.value !== '') {
 						todoList.push(textArea.value);
-						setTodos(todoList)
-						console.log(todoList[count]);
+						setTodos(todoList);
+						date.push(Date());
+						setDate(date);
+						stateValueUpdate();
 					}
-					setCount(count + 1);
 				}}
 			>
 			Post To Do
