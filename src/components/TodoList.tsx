@@ -2,8 +2,8 @@ import * as React from 'react';
 import { useState } from 'react';
 import * as styles from '../scss/app.scss'
 
-const getTodoList = (todoList: Array<String>, date: Array<String>): Array<JSX.Element> => {
-	return todoList.map((todo: String, index: number) =>
+const getTodoListElm = (todoList: Array<string>, date: Array<string>): Array<JSX.Element> => {
+	return todoList.map((todo: string, index: number) =>
 		<span
 			className={ styles.todo }
 			key={ index }
@@ -21,7 +21,9 @@ const getTodoList = (todoList: Array<String>, date: Array<String>): Array<JSX.El
 		</span>
 	);
 }
+
 const TodoList = (): JSX.Element => {
+	// no rerendering without row variable updating
 	const [update, updateState] = useState(0);
 	const [todoList, setTodos] = useState(Array(''));
 	const [date, setDate] = useState(Array(Date()));
@@ -45,7 +47,7 @@ const TodoList = (): JSX.Element => {
 	return (
 		<div>
 			<p>Today's</p>
-			{ getTodoList(todoList, date) }
+			{ getTodoListElm(todoList, date) }
 			<textarea className="todoTextArea" inputMode="text"></textarea>
 			<button onClick={ setStateTodoList }
 			>
