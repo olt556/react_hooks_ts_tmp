@@ -33,22 +33,21 @@ const TodoList = (): JSX.Element => {
 			updateState(0);
 		}
 	}
+	const setStateTodoList = (): void => {
+		const textArea: HTMLInputElement = document.querySelector('.todoTextArea');
+		todoList.push(textArea.value);
+		setTodos(todoList);
+		date.push(Date());
+		setDate(date);
+		stateValueUpdate();
+	}
 
 	return (
 		<div>
 			<p>Today's</p>
 			{ getTodoList(todoList, date) }
 			<textarea className="todoTextArea" inputMode="text"></textarea>
-			<button onClick={() => {
-					const textArea: HTMLInputElement = document.querySelector('.todoTextArea');
-					if (textArea.value !== '') {
-						todoList.push(textArea.value);
-						setTodos(todoList);
-						date.push(Date());
-						setDate(date);
-						stateValueUpdate();
-					}
-				}}
+			<button onClick={ setStateTodoList }
 			>
 			Post To Do
 			</button>
