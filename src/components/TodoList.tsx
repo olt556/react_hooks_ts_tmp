@@ -29,7 +29,7 @@ const TodoList = (): JSX.Element => {
 	const stateValueUpdate = (): void => {
 		if (update === 0) {
 			updateState(1);
-		} else{
+		} else {
 			updateState(0);
 		}
 	}
