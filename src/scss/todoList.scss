@@ -1,0 +1,21 @@
+.todo {
+	&__text {
+		font-size: 20px;
+	}
+	&__date {
+		font-size: 10px;
+	}
+	&__textArea {
+		resize: none;
+	}
+}
+
+.displayFlex {
+    display: flex;
+}
+
+.ml5 {
+    margin-left: 5px;
+}
+
+

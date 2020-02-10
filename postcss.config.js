@@ -3,5 +3,5 @@ module.exports = {
         require("autoprefixer")({
             grid: "autoplace" // gridレイアウトを有効にする
         })
-    ]
+    ],
 };

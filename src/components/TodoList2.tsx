@@ -51,7 +51,7 @@ const TodoList = (): JSX.Element => {
 			<div className={ styles.displayFlex }>
 				<textarea 
 					className={ styles.todo__textArea } 
-					onChange={(e) => { changeStateTextArea(e.currentTarget) }} 
+					onChange={ e => { changeStateTextArea(e.currentTarget) } } 
 					inputMode="text">
 				</textarea>
 				<button className={ styles.ml5 } onClick={ setStateTodoList }>
