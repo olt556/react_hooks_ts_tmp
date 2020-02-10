@@ -13,10 +13,10 @@ const getTodoListElm = (todoList: Array<string>, date: Array<string>): Array<JSX
 
 const TodoList2 = (): JSX.Element => {
     // no rerendering without row variable updating
-    const [update, updateState] = useState(0);
-    const [todoList, setTodos] = useState(Array(''));
-    const [date, setDate] = useState(Array(Date()));
-    const [textData, setTextData] = useState('');
+    const [update, updateState]: [number, Function] = useState(0);
+    const [todoList, setTodos]: [Array<string>, Function] = useState([]);
+    const [date, setDate]: [Array<string>, Function] = useState([]);
+    const [textData, setTextData]: [string, Function] = useState(String());
 
     const stateValueUpdate = (): void => {
         if (update === 0) {
@@ -26,11 +26,13 @@ const TodoList2 = (): JSX.Element => {
         }
     };
     const setStateTodoList = (): void => {
-        todoList.push(textData);
-        setTodos(todoList);
-        date.push(Date());
-        setDate(date);
-        stateValueUpdate();
+        if (textData !== '') {
+            todoList.push(textData);
+            setTodos(todoList);
+            date.push(Date());
+            setDate(date);
+            stateValueUpdate();
+        }
     };
     const changeStateTextArea = (e: HTMLTextAreaElement): void => {
         const textAreaStr: string = e.value;

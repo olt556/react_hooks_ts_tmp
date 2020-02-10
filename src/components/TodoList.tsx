@@ -13,10 +13,10 @@ const getTodoListElm = (todoList: Array<string>, date: Array<string>): Array<JSX
 
 const TodoList = (): JSX.Element => {
     // no rerendering without row variable updating
-    const [update, updateState] = useState(0);
-    const [todoList, setTodos] = useState(Array(String()));
-    const [date, setDate] = useState(Array(Date()));
-    const [textData, setTextData] = useState('');
+    const [update, updateState]: [number, Function] = useState(0);
+    const [todoList, setTodos]: [Array<string>, Function] = useState([]);
+    const [date, setDate]: [Array<string>, Function] = useState([]);
+    const [textData, setTextData]: [string, Function] = useState('');
 
     const stateValueUpdate = (): void => {
         if (update === 0) {
