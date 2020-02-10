@@ -14,7 +14,7 @@ const getTodoListElm = (todoList: Array<string>, date: Array<string>): Array<JSX
 const TodoList = (): JSX.Element => {
     // no rerendering without row variable updating
     const [update, updateState] = useState(0);
-    const [todoList, setTodos] = useState(Array(''));
+    const [todoList, setTodos] = useState(Array(String()));
     const [date, setDate] = useState(Array(Date()));
     const [textData, setTextData] = useState('');
 
@@ -26,11 +26,13 @@ const TodoList = (): JSX.Element => {
         }
     };
     const setStateTodoList = (): void => {
-        todoList.push(textData);
-        setTodos(todoList);
-        date.push(Date());
-        setDate(date);
-        stateValueUpdate();
+        if (textData !== '') {
+            todoList.push(textData);
+            setTodos(todoList);
+            date.push(Date());
+            setDate(date);
+            stateValueUpdate();
+        }
     };
     const changeStateTextArea = (e: HTMLTextAreaElement): void => {
         const textAreaStr: string = e.value;
@@ -47,7 +49,8 @@ const TodoList = (): JSX.Element => {
                     onChange={(e): void => {
                         changeStateTextArea(e.currentTarget);
                     }}
-                    inputMode="text"></textarea>
+                    inputMode="text"
+                ></textarea>
                 <button className={styles.ml5} onClick={setStateTodoList}>
                     Post To Do
                 </button>

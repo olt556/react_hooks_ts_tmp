@@ -47,7 +47,8 @@ const TodoList2 = (): JSX.Element => {
                     onChange={(e): void => {
                         changeStateTextArea(e.currentTarget);
                     }}
-                    inputMode="text"></textarea>
+                    inputMode="text"
+                ></textarea>
                 <button className={styles.ml5} onClick={setStateTodoList}>
                     Post To Do
                 </button>
