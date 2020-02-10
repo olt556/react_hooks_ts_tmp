@@ -5,6 +5,8 @@
             "corejs": 3
         }],
         "@babel/preset-react",
-        ["minify", {}]
+        ["minify", {
+            "keepFnName": true
+        }]
     ]
 }

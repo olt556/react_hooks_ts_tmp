@@ -1,5 +1,5 @@
 const path = require('path');
-const MinifyPlugin = require("babel-minify-webpack-plugin");
+const BabelMinifyPlugin = require("babel-minify-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -33,7 +33,7 @@ module.exports = {
 		],
 	},
 	plugins: [
-		new MinifyPlugin(),
+		new BabelMinifyPlugin(),
 		new HtmlWebpackPlugin({
 			publicPath: 'dist',
 			filename: 'index.html',
@@ -41,7 +41,7 @@ module.exports = {
 		}),
 		new MiniCssExtractPlugin({
 			publicPath: 'dist',
-			filename: '[name].css',
+			filename: 'app.css',
 		}),
     ],
 }
