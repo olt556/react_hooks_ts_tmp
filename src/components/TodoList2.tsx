@@ -11,7 +11,7 @@ const getTodoListElm = (todoList: Array<string>, date: Array<string>): Array<JSX
     ));
 };
 
-const TodoList = (): JSX.Element => {
+const TodoList2 = (): JSX.Element => {
     // no rerendering without row variable updating
     const [update, updateState] = useState(0);
     const [todoList, setTodos] = useState(Array(''));
@@ -56,4 +56,4 @@ const TodoList = (): JSX.Element => {
     );
 };
 
-export default TodoList;
+export default TodoList2;

@@ -8,7 +8,7 @@ const Main = (): JSX.Element => {
     return (
         <BrowserRouter>
             <Switch>
-                <Route exact path="/" component={TodoList} />
+                <Route path="/" component={TodoList} />
                 <Route path="/todo" component={TodoList2} />
             </Switch>
         </BrowserRouter>
@@ -16,3 +16,5 @@ const Main = (): JSX.Element => {
 };
 
 render(<Main />, document.getElementById('root'));
+
+export default Main;

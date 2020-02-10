@@ -4,7 +4,7 @@
         "noImplicitAny": true,
         "allowJs": true,
         "strictNullChecks": true,
-        "module": "commonjs",
+        "module": "ES6",
         "target": "es5",
         "jsx": "react",
     },
