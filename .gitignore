@@ -1,5 +1,5 @@
-node_modules/
-yarn-error.log
-package-lock.json
-dist/
-.DS_STORE
+/node_modules
+/dist
+/yarn-error.log
+/package-lock.json
+/.DS_STORE
