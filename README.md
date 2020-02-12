@@ -1,4 +1,4 @@
-# ReactHooks Using TypeScripy Template
+# ReactHooks Using TypeScript Template
 
 ## ビルド
 
